@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+contract MyNFTToken {
+
+    
+    string public tokenName = "Justine Donn Angsantos";
+    string public tokenAbbrv = "JDA";
+    uint public totalSupply;
+
+    
+    mapping (address => uint) public Balances;
+
+    
+    function mint (address Address, uint value) public{
+        totalSupply += value;
+        Balances[Address] += value; 
+
+    }
+    function burn (address Address, uint value) public {
+        if (Balances[Address] >= value){
+        totalSupply -= value;
+        Balances[Address] -= value;}
+        else{
+
+
+    }
+    }
+}
